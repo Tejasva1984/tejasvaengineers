@@ -1,118 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tejasva Engineers</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            margin: 10px;
-            background-color: white;
-            border-radius: 8px;
-        }
-        h2 {
-            color: #004080;
-        }
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Tejasva Engineers</h1>
-        <p>PESO-Recognized Experts in Pressure Vessel Safety</p>
-    </header>
-
-    <section>
-        <h2>About Us</h2>
-        <p>Tejasva Engineers is a PESO-recognized third-party inspection agency, certified as a “Competent Person” under SMPV(U) Rules, 2016 (Letter No. CPS111515 dated 05.06.2025). We specialize in engineering design, inspection, certification, and licensing services for cryogenic, non-cryogenic, and hydrocarbon pressure vessels.</p>
-    </section>
-
-    <section>
-        <h2>Our Services</h2>
-        <h3>Design & Engineering</h3>
-        <ul>
-            <li>Layout Plans / Site Plans / 100m Radius Key Plans</li>
-            <li>Mounting Drawings for Cryogenic & Non-Cryogenic Vessels</li>
-            <li>Civil Foundation Drawings</li>
-            <li>Engineering Drawings for Cryogenic (LOX, LIN, LAR), Non-Cryogenic (CO₂, Chlorine, Ammonia), and Hydrocarbon (LPG, Propane) Vessels</li>
-        </ul>
-
-        <h3>Third-Party Inspection & Certification</h3>
-        <ul>
-            <li>SRV Testing (Rule 18)</li>
-            <li>Hydrostatic Testing (Rule 19)</li>
-            <li>Safety Certification of Storage Installations (Rule 33)</li>
-            <li>Safety Certification of Transport Tankers (Rule 43)</li>
-        </ul>
-
-        <h3>Licensing Services (PESO Norms)</h3>
-        <ul>
-            <li>License / Renewal / Amendment (Form LS1 & LS2)</li>
-            <li>Prior Approval to Final PESO Endorsement</li>
-        </ul>
-
-        <h3>Installation, Erection & Maintenance</h3>
-        <ul>
-            <li>Cryogenic Tank Installation at Hospitals, Steel Plants, Pharma Units, Gas Industries</li>
-            <li>Gas Cylinder Filling Station Setup & Certification</li>
-        </ul>
-
-        <h3>Maintenance Services</h3>
-        <ul>
-            <li>Preventive Maintenance of Cryogenic & Non-Cryogenic Vessels</li>
-            <li>Maintenance of Hydrocarbon Storage Vessels</li>
-        </ul>
-
-        <h3>Cylinder Testing Station</h3>
-        <ul>
-            <li>Setup & PESO Approval for Cylinder Testing Facilities</li>
-        </ul>
-
-        <h3>Import Vessel Approval</h3>
-        <ul>
-            <li>Facilitation of PESO Approval for Imported Pressure Vessels</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Our Objective</h2>
-        <p>To ensure safety, compliance, and operational efficiency for pressure vessel users across industries through certified third-party inspection and engineering services.</p>
-    </section>
-
-    <section>
-        <h2>PESO Recognition</h2>
-        <p>Certified as “Competent Person” under SMPV(U) Rules, 2016</p>
-        <p><strong>Letter No.:</strong> CPS111515</p>
-        <p><strong>Date:</strong> 05.06.2025</p>
-        <p>Recognized by the Petroleum & Explosives Safety Organization (PESO), Govt. of India</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Tejasva Engineers. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+<div class="text-center">
+    <h1 class="display-4">This is a list of Courses</h1>    
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+                <th scope="col">Course ID</th>
+                <th scope="col">For exam</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Rating</th>
+    </tr>
+  </thead>
+   <tbody>
+    
+        @foreach(var course in Model.Courses)
+                {
+                    <tr>
+                    <th scope="row">@course.CourseID</th>
+                    <th scope="row"><img src="@course.ExamImage" width="400" height="100"></th>
+                    <td>@course.CourseName</td>
+                    <td>@course.Rating</td>
+                    </tr>
+                }                
+    
+    </tbody>
+  </table>
+</div>
